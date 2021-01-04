@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Ramsey\Uuid\Uuid;
 
 class TestApplication extends Model
 {
@@ -17,5 +18,9 @@ class TestApplication extends Model
 
     public function applicant(){
         return $this->belongsTo(Applicant::class);
+    }
+
+    public function generateToken(){
+        $this->token = Uuid::uuid4()->toString();
     }
 }

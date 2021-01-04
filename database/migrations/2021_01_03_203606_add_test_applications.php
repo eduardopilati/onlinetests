@@ -16,7 +16,7 @@ class AddTestApplications extends Migration
         Schema::create('test_applications', function (Blueprint $table) {
             $table->id();
 
-            $table->string('token', 40);
+            $table->string('token', 36)->unique();
             $table->dateTime('start_date')->nullable();
             $table->dateTime('end_date')->nullable();
             $table->decimal('grade', 10, 4)->nullable();
