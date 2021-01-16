@@ -40,5 +40,7 @@ return [
         'alert' => 'You are receiving this email because we received a password registration request for your account.',
         'register' => 'Register Password',
         'expire' => 'This password registration link will expire in :count minutes.'
-    ]
+    ],
+
+    'setup_alertuserpassword' => "An email will be sent to create the user's password"
 ];

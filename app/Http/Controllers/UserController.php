@@ -50,7 +50,7 @@ class UserController extends Controller
         return redirect()->route('users');
     }
 
-    private function sendEmail(User $user){
+    public function sendEmail(User $user){
         Password::broker()->sendResetLink(['email'=>$user->email], function($userProvider, $token) use ($user){
             $user->notify(new NewUserPasswordNotification($user, $token));
         });

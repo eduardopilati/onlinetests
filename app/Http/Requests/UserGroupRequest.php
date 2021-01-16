@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rules\Unique;
 
 class UserGroupRequest extends FormRequest
 {
@@ -23,8 +24,9 @@ class UserGroupRequest extends FormRequest
      */
     public function rules()
     {
+        $id = $this->route('id') ?? 0;
         return [
-            'title' => ['string', 'min:5', 'max:100', 'required']
+            'title' => ['string', 'min:5', 'max:100', 'required', "unique:user_groups,title,{$id}"]
         ];
     }
 }

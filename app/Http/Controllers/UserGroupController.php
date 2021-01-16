@@ -22,16 +22,16 @@ class UserGroupController extends Controller
     }
 
     public function save(UserGroupRequest $request){
-        $usergroups = new UserGroup();
-        $usergroups->title = $request->input('title');
-        $usergroups->save();
+        $usergroup = new UserGroup();
+        $usergroup->title = $request->input('title');
+        $usergroup->save();
         return redirect()->route('usergroups');
     }
 
     public function update($id, UserGroupRequest $request){
-        $usergroups = UserGroup::findOrFail($id);
-        $usergroups->title = $request->input('title');
-        $usergroups->save();
+        $usergroup = UserGroup::findOrFail($id);
+        $usergroup->title = $request->input('title');
+        $usergroup->save();
         return redirect()->route('usergroups');
     }
 }

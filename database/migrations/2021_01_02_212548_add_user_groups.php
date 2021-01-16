@@ -15,7 +15,7 @@ class AddUserGroups extends Migration
     {
         Schema::create('user_groups', function (Blueprint $table) {
             $table->id();
-            $table->string('title', 100);
+            $table->string('title', 100)->unique();
             $table->timestamps();
         });
     }

@@ -19,6 +19,12 @@ Route::get('/', function () {
 
 Auth::routes();
 
+Route::prefix('setup')->name('setup')->group(function(){
+    Route::get('', [ App\Http\Controllers\SetupController::class, 'index'])->name('');
+    Route::post('saveuser', [ App\Http\Controllers\SetupController::class, 'saveuser'])->name('.saveuser');
+    Route::post('saveusergroup', [ App\Http\Controllers\SetupController::class, 'saveusergroup'])->name('.saveusergroup');
+});
+
 Route::middleware(['auth'])->group(function(){
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
