@@ -1,4 +1,8 @@
-@extends('layouts.app')
+@extends('adminlte::page')
+
+@section('adminlte_css')
+    <link rel="stylesheet" href="/css/app.css">
+@endsection
 
 @section('content')
 <div class="container">
