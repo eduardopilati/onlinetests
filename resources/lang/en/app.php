@@ -6,6 +6,9 @@ return [
     'back' => 'Back',
     'close' => 'Close',
     'unlink' => 'Unlink',
+    'view' => 'View',
+    'move-here' => 'Move here',
+    'root-folder' => 'Root Folder',
 
     //Atributes
     'name' => 'Name',
@@ -42,5 +45,17 @@ return [
         'expire' => 'This password registration link will expire in :count minutes.'
     ],
 
-    'setup_alertuserpassword' => "An email will be sent to create the user's password"
+    'setup_alertuserpassword' => "An email will be sent to create the user's password",
+
+    //Test Groups
+    'testgroup' => 'Test Group',
+    'testgroups' => 'Test Groups',
+    'create-testgroup' => 'Create New Test Group',
+    'edit-testgroup' => 'Edit Test Group',
+    'save-testgroup' => 'Save Test Group',
+    'parent-testgroup' => 'Parent Test Group',
+    'move-testgroup' => 'Move Test Group',
+    'no-testgroup-found' => 'No Test Groups Found',
+    'wrongmovetochild-testgroup' => 'Error: You cannot move a group to a child of its own',
+
 ];

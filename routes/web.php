@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::pattern('id', '[0-9]+');
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -46,5 +48,15 @@ Route::middleware(['auth'])->group(function(){
         Route::get('edit/{id}', [ App\Http\Controllers\UserGroupController::class, 'edit'])->name('.edit');
         Route::post('save', [ App\Http\Controllers\UserGroupController::class, 'save'])->name('.save');
         Route::post('update/{id}', [ App\Http\Controllers\UserGroupController::class, 'update'])->name('.update');
+    });
+
+    Route::prefix('testgroups')->name('testgroups')->group(function(){
+        Route::get('{id?}', [ App\Http\Controllers\TestGroupController::class, 'index'])->name('');
+        Route::get('create/{id?}', [ App\Http\Controllers\TestGroupController::class, 'create'])->name('.create');
+        Route::get('edit/{id}', [ App\Http\Controllers\TestGroupController::class, 'edit'])->name('.edit');
+        Route::post('save/{id?}', [ App\Http\Controllers\TestGroupController::class, 'save'])->name('.save');
+        Route::post('update/{id}', [ App\Http\Controllers\TestGroupController::class, 'update'])->name('.update');
+        Route::get('listtestgroups/{id}', [ App\Http\Controllers\TestGroupController::class, 'listtestgroups'])->name('.listtestgroups');
+        Route::post('changeparentgroup/{id}', [ App\Http\Controllers\TestGroupController::class, 'changeParentGroup'])->name('.changeparentgroup');
     });
 });

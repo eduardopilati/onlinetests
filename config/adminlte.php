@@ -234,8 +234,8 @@ return [
             'icon'  => 'fa fa-users',
         ],
         [
-            'text' => 'Tests',
-            'url'  => 'tests',
+            'text' => 'Test Groups',
+            'url'  => 'testgroups',
             'icon'  => 'fa fa-file-alt',
         ],
     ],
